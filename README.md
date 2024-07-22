@@ -1,7 +1,7 @@
-# intent_classification_analysis
-A comparative analysis of encoder only and decoder only models in intent classication
+# intent-classification-analysis
+A comparative analysis of encoder only and decoder only models in intent classication.
 
-# Reference
+## Reference
 - [A Comparative Analysis of Encoder Only and Decoder Only Models in Intent Classification and Sentiment Analysis: Navigating the Trade-Offs in Model Size and Performance](https://www.researchgate.net/publication/377467915_A_Comparative_Analysis_of_Encoder_Only_and_Decoder_Only_Models_in_Intent_Classification_and_Sentiment_Analysis_Navigating_the_Trade-Offs_in_Model_Size_and_Performance)
     ```
     Abstract
@@ -12,3 +12,6 @@ A comparative analysis of encoder only and decoder only models in intent classic
 
     Our results shows that for such natural language understanding tasks, encoder-only models in general provide better performance than decoder-only models, at a fraction of the computational demands.
     ```
+
+## Dataset
+- [AI Hub/용도별 목적대화 데이터](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=544)
