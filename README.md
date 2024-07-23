@@ -27,6 +27,8 @@ A comparative analysis of encoder only and decoder only models in intent classic
   scripts/download_dataset.sh
   ```
 
+  - 환경변수에 `AIHUB_ID`, `AIHUB_PW`가 포함되어 있어야한다.
+
   2. `data` 구조
      1. **Training**
         - Label: `TL_1.shopping.zip`: `data/training/label`
