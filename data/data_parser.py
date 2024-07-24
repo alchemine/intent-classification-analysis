@@ -3,7 +3,8 @@ import json
 import datasets
 from transformers import ElectraTokenizer
 import argparse
-
+from os.path import abspath, dirname, join
+    
 
 def get_txt_files(directory):
     txt_files = [os.path.join(directory, f) for f in os.listdir(directory) if f.endswith('.txt')]
@@ -12,10 +13,11 @@ def get_txt_files(directory):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--BASE_PATH", default="/workspace/intent-classification-analysis/data/raw")
-    parser.add_argument("--id_info_path", default="/workspace/intent-classification-analysis/data/id.json")
+    DATA_DIR = dirname(abspath(__file__))
+    parser.add_argument("--BASE_PATH", default=join(DATA_DIR, "raw"))
+    parser.add_argument("--id_info_path", default=join(DATA_DIR, "id.json"))
     parser.add_argument("--tokenizer", default="monologg/koelectra-base-v3-discriminator")
-    parser.add_argument("--save_dir", default="/workspace/intent-classification-analysis/data/preprocess")
+    parser.add_argument("--save_dir", default=join(DATA_DIR, "preprocess"))
 
 
     args = parser.parse_args()
