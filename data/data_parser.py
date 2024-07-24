@@ -40,5 +40,5 @@ if __name__ == "__main__":
                 datas.append({"text":content, "label":ids[key]})
 
     datas = datasets.Dataset.from_list(datas)
-    datas = datas.map(lambda example:tokenizer(example['text']))
+    datas = datas.map(lambda example:tokenizer(example['text'], max_length=512))
     datas.save_to_disk(args.save_dir)
