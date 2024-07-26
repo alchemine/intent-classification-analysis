@@ -41,3 +41,21 @@ unzip $INPUT_FILE -d $OUTPUT_DIR
 
 # Cleanup the downloaded dataset
 rm -rf $INPUT_DIR
+
+
+
+BASE_PATH=data
+
+old_folder_names=("05.환불반품교환" "03.주문결제" "04.배송")
+new_folder_names=("exchange_returnorder" "order_payment" "shipment")
+
+length=${#old_folder_names[@]}
+for ((i=0; i<$length; i++)); do
+  old_name=${old_folder_names[$i]}
+  new_name=${new_folder_names[$i]}
+  mv "$BASE_PATH/validation/label/$old_name" "$BASE_PATH/validation/label/$new_name"
+  mv "$BASE_PATH/training/label/$old_name" "$BASE_PATH/training/label/$new_name"
+
+done
+
+
