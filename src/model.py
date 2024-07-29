@@ -18,3 +18,4 @@ class IntentClassifier(nn.Module):
             loss = loss_fn(logits.view(-1, self.num_labels), labels.view(-1))
             return loss, logits
         return logits
+    
