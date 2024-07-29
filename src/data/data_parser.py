@@ -8,7 +8,7 @@ from transformers import ElectraTokenizer
 
 
 ROOT_DIR = dirname(dirname(dirname(abspath(__file__))))
-DATA_DIR = join(ROOT_DIR, "data")
+DATA_DIR = join(ROOT_DIR, "sbin/data")
 CONFIGS_DIR = join(ROOT_DIR, "configs")
 
 
@@ -21,7 +21,7 @@ def get_txt_files(directory):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--BASE_PATH", default=join(DATA_DIR, "raw"))
+    parser.add_argument("--BASE_PATH", default=join(DATA_DIR, "training/raw"))
     parser.add_argument("--id_info_path", default=join(CONFIGS_DIR, "id.json"))
     parser.add_argument(
         "--tokenizer", default="monologg/koelectra-base-v3-discriminator"
@@ -45,5 +45,5 @@ if __name__ == "__main__":
                 datas.append({"text": content, "label": ids[key]})
 
     datas = datasets.Dataset.from_list(datas)
-    datas = datas.map(lambda example: tokenizer(example["text"]))
+    datas = datas.map(lambda example: tokenizer(example["text"], max_length=512))
     datas.save_to_disk(args.save_dir)

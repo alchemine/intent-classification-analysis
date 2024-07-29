@@ -55,7 +55,9 @@ for ((i=0; i<$length; i++)); do
   new_name=${new_folder_names[$i]}
   mv "$BASE_PATH/validation/label/$old_name" "$BASE_PATH/validation/label/$new_name"
   mv "$BASE_PATH/training/label/$old_name" "$BASE_PATH/training/label/$new_name"
-
+  
+  mv "$BASE_PATH/validation/raw/$old_name" "$BASE_PATH/validation/raw/$new_name"
+  mv "$BASE_PATH/training/raw/$old_name" "$BASE_PATH/training/raw/$new_name"
 done
 
 
