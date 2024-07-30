@@ -8,7 +8,7 @@ from transformers import ElectraTokenizer
 
 
 ROOT_DIR = dirname(dirname(dirname(abspath(__file__))))
-DATA_DIR = join(ROOT_DIR, "sbin/data")
+DATA_DIR = join(ROOT_DIR, "data")
 CONFIGS_DIR = join(ROOT_DIR, "configs")
 
 
