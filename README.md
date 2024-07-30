@@ -19,9 +19,18 @@ A comparative analysis of encoder only and decoder only models in intent classic
 ## Dataset
 
 - [AI Hub/용도별 목적대화 데이터/shopping](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=544)
-  1. **Training**
-     - Label: `TL_1.shopping.zip`: `data/training/label`
-     - Raw: `TS_1.shopping.zip`: `data/training/raw`
-  2. **Validation**
-     - Label: `VL_1.shopping.zip`: `data/validation/label`
-     - Raw: `VS_1.shopping.zip`: `data/validation/raw`
+
+1. 다운로드
+    ```bash
+    chmod +x -R scripts
+    scripts/download_dataset.sh
+    ```
+    - 환경변수에 `AIHUB_ID`, `AIHUB_PW`가 포함되어 있어야한다.
+
+2. `data` 구조
+   1. **Training**
+      - Label: `TL_1.shopping.zip`: `data/training/label`
+      - Raw: `TS_1.shopping.zip`: `data/training/raw`
+   2. **Validation**
+      - Label: `VL_1.shopping.zip`: `data/validation/label`
+      - Raw: `VS_1.shopping.zip`: `data/validation/raw`

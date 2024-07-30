@@ -162,7 +162,5 @@ data/raw
 #.idea/
 
 # Data
-data
-
-# dev container
-.devcontainer
+data/training
+data/validation
